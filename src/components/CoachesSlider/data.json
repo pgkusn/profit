@@ -1,0 +1,22 @@
+[
+    {
+        "img": "images/slide-preivew-1.jpg",
+        "name": "john doe",
+        "title": "CrossFit Coach"
+    },
+    {
+        "img": "images/slide-preivew-2.jpg",
+        "name": "Samantha smith",
+        "title": "Fitness Coach"
+    },
+    {
+        "img": "images/slide-preivew-3.jpg",
+        "name": "Ann Johnson",
+        "title": "Yoga Coach"
+    },
+    {
+        "img": "images/slide-preivew-4.jpg",
+        "name": "kate Peterson",
+        "title": "Pilates Coach"
+    }
+]

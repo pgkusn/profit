@@ -1,0 +1,20 @@
+[
+    {
+        "img": "images/slider-item-1.jpg",
+        "lbs": "44",
+        "say": "The coaches are knowledgeable and sincerely dedicated to helping everyone scale to their current ability, improve strength, and have fun.",
+        "name": "Jack Wilson"
+    },
+    {
+        "img": "images/slider-item-2.jpg",
+        "lbs": "55",
+        "say": "I came here to acquire the shape of my body I had half a year ago. I was quite surprised with a range of services and assistance they offered me.",
+        "name": "Judith Patterson"
+    },
+    {
+        "img": "images/slider-item-3.jpg",
+        "lbs": "61",
+        "say": "I have had the phenomenal pleasure of working out with your coaches as a client and friend throughout the course of the last year.",
+        "name": "Nancy Jackson"
+    }
+]

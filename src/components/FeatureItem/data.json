@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "linearicons-medal-empty",
+        "title": "Quality Service",
+        "subtitle": "At our fitness studio, you can experience the best level of customer service."
+    },
+    {
+        "icon": "linearicons-dumbbell",
+        "title": "Spacious gym",
+        "subtitle": "Our gym has enough place for all kinds of workouts and a wide variety of equipment."
+    },
+    {
+        "icon": "linearicons-document",
+        "title": "unique fitness programs",
+        "subtitle": "Our coaches have developed more than 50 fitness programs and workouts for you."
+    },
+    {
+        "icon": "linearicons-users2",
+        "title": "Group classes",
+        "subtitle": "If you prefer training with friends, then our group classes have what you need."
+    }
+]
