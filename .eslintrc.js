@@ -4,7 +4,7 @@ module.exports = {
         node: true
     },
     extends: [
-        'plugin:vue/vue3-essential',
+        'plugin:vue/vue3-recommended',
         '@vue/standard'
     ],
     parserOptions: {
@@ -18,6 +18,7 @@ module.exports = {
         semi: ['error', 'always'],
         'vue/html-indent': ['error', 4],
         'vue/max-attributes-per-line': ['error', { singleline: 3 }],
+        'vue/html-closing-bracket-newline': ['error', { multiline: 'always' }],
         'import/no-absolute-path': 'off',
         'no-undef': 'off',
         'eol-last': 'off',

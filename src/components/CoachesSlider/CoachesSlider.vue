@@ -1,45 +1,52 @@
 <template>
-    <swiper
-        :slides-per-view="slidesPerView"
-        :centered-slides="centeredSlides"
-        :loop="true"
-        :space-between="30"
-        :pagination="{ el: '.swiper-pagination', clickable: true }"
-        :navigation="{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }"
-        class="xl:pb-8"
-    >
-        <swiper-slide
-            v-for="item in $props.data"
-            :key="item.img"
-            class="coaches__slide"
-            v-slot="{ isNext }">
-            <div class="bg-white shadow-xl">
-                <div class="coaches__slide--img bg-cover" :style="{ 'background-image': `url(${item.img})` }"></div>
-                <div class="coaches__slide--content flex flex-col items-center py-6 transition-all duration-300" :class="{ 'is-next': isNext }">
-                    <h2 class="uppercase text-xl font-bold leading-normal">{{ item.name }}</h2>
-                    <h3 class="text-gray-600">{{ item.title }}</h3>
-                    <ul class="dropdown flex items-center pt-5" :class="{ 'is-next': isNext }">
-                        <li class="xl:opacity-0">
-                            <a href="javascript:;" class="mdi mdi-facebook"></a>
-                        </li>
-                        <li class="ml-4 xl:opacity-0">
-                            <a href="javascript:;" class="mdi mdi-instagram"></a>
-                        </li>
-                        <li class="ml-4 xl:opacity-0">
-                            <a href="javascript:;" class="mdi mdi-youtube-play"></a>
-                        </li>
-                    </ul>
+    <div data-aos="fade-up">
+        <swiper
+            :slides-per-view="slidesPerView"
+            :centered-slides="centeredSlides"
+            :loop="true"
+            :space-between="30"
+            :pagination="{ el: '.swiper-pagination', clickable: true }"
+            :navigation="{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }"
+            class="xl:pb-8"
+        >
+            <swiper-slide
+                v-for="item in $props.data"
+                :key="item.img"
+                v-slot="{ isNext }"
+                class="coaches__slide"
+            >
+                <div class="bg-white shadow-xl">
+                    <div class="coaches__slide--img bg-cover" :style="{ 'background-image': `url(${item.img})` }" />
+                    <div class="coaches__slide--content flex flex-col items-center py-6 transition-all duration-300" :class="{ 'is-next': isNext }">
+                        <h2 class="uppercase text-xl font-bold leading-normal">
+                            {{ item.name }}
+                        </h2>
+                        <h3 class="text-gray-600">
+                            {{ item.title }}
+                        </h3>
+                        <ul class="dropdown flex items-center pt-5" :class="{ 'is-next': isNext }">
+                            <li class="xl:opacity-0">
+                                <a href="javascript:;" class="mdi mdi-facebook" />
+                            </li>
+                            <li class="ml-4 xl:opacity-0">
+                                <a href="javascript:;" class="mdi mdi-instagram" />
+                            </li>
+                            <li class="ml-4 xl:opacity-0">
+                                <a href="javascript:;" class="mdi mdi-youtube-play" />
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+            </swiper-slide>
+
+            <div v-show="slidesPerView < 3" class="mx-auto mt-16 h-6 flex justify-center">
+                <div class="swiper-pagination" />
             </div>
-        </swiper-slide>
+        </swiper>
 
-        <div class="mx-auto mt-16 h-6 flex justify-center" v-show="slidesPerView < 3">
-            <div class="swiper-pagination"></div>
-        </div>
-    </swiper>
-
-    <div class="swiper-button-next w-12 h-12 bg-white rounded shadow transform rotate-45 2xl:right-0" v-show="slidesPerView === 3"></div>
-    <div class="swiper-button-prev w-12 h-12 bg-white rounded shadow transform rotate-45 2xl:left-0" v-show="slidesPerView === 3"></div>
+        <div v-show="slidesPerView === 3" class="swiper-button-next w-12 h-12 bg-white rounded shadow transform rotate-45" />
+        <div v-show="slidesPerView === 3" class="swiper-button-prev w-12 h-12 bg-white rounded shadow transform rotate-45" />
+    </div>
 </template>
 
 <script>
@@ -90,6 +97,14 @@ export default {
     }
     &:hover::after {
         color: $red;
+    }
+}
+@media (min-width: #{$xxl-screen}px) {
+    .swiper-button-next {
+        right: 0;
+    }
+    .swiper-button-prev {
+        left: 0;
     }
 }
 </style>

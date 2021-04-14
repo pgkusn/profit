@@ -231,7 +231,7 @@
     .coaches {
         background-image: linear-gradient(theme('colors.gray.100') 60%, #fff 0, #fff);
         > .container {
-            @screen 2xl {
+            @media (min-width: #{$xxl-screen}px) {
                 padding: 0 100px;
                 max-width: 1400px;
             }

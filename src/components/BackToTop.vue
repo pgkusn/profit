@@ -3,7 +3,8 @@
         href
         class="fa-angle-up fixed right-4 sm:right-10 z-30 flex justify-center items-center w-12 h-12 bg-red text-white text-xl transition-all duration-300 hover:bg-black"
         :class="classObj"
-        @click.prevent="clickHandler"></a>
+        @click.prevent="clickHandler"
+    />
 </template>
 
 <script>

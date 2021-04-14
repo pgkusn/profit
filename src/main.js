@@ -9,7 +9,10 @@ AOS.init({ once: true });
 import smoothscroll from 'smoothscroll-polyfill';
 smoothscroll.polyfill();
 
+import VueLoaders from 'vue-loaders';
+import 'vue-loaders/dist/vue-loaders.css';
+
 import { useMediaSensor } from '@/composition/mediaSensor';
 useMediaSensor();
 
-createApp(App).mount('#app');
+createApp(App).use(VueLoaders).mount('#app');

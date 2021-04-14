@@ -2,10 +2,11 @@
     <form action="" class="w-80 mt-9 md:mx-auto" @submit="submitHandler">
         <div class="relative text-gray-600">
             <input
-                type="text"
                 v-model="name"
+                type="text"
                 class="appearance-none w-full h-12 border border-gray-300 rounded px-5 py-3 focus:outline-none"
-                :class="{ 'border-red': nameErr }">
+                :class="{ 'border-red': nameErr }"
+            >
             <span v-show="!name" class="absolute left-5 top-3 pointer-events-none transition">Your Name</span>
             <span class="text-xs text-red absolute top-0 right-2">{{ nameErr }}</span>
         </div>
@@ -15,11 +16,14 @@
                 class="appearance-none w-full h-12 border border-gray-300 rounded px-5 py-3 focus:outline-none"
                 :class="{ 'border-red': emailErr }"
                 :value="email"
-                @change="handleChange">
+                @change="handleChange"
+            >
             <span v-show="!email" class="absolute left-5 top-3 pointer-events-none transition">E-mail</span>
             <span class="text-xs text-red absolute top-0 right-2">{{ emailErr }}</span>
         </div>
-        <button type="submit" class="btn px-12 mt-7">join now</button>
+        <button type="submit" class="btn px-12 mt-7">
+            join now
+        </button>
     </form>
 </template>
 

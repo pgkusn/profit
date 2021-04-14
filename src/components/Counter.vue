@@ -2,7 +2,8 @@
     <div
         class="counter flex flex-col justify-center items-center"
         :data-aos="$props.animationName"
-        :data-aos-id="$props.title">
+        :data-aos-id="$props.title"
+    >
         <span class="text-6xl font-bold text-gray-700 font-roboto-condensed">{{ animatedNumber.int }}</span>
         <span class="mt-3 text-gray-800 font-roboto-condensed uppercase">{{ $props.title }}</span>
     </div>
