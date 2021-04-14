@@ -28,37 +28,8 @@
 }
 
 @layer components {
-    .fade-enter-active,
-    .fade-leave-active {
-        transition: opacity .2s ease;
-    }
-    .fade-enter-from,
-    .fade-leave-to {
-        opacity: 0;
-    }
-    .right-in-enter-from,
-    .left-in-leave-to {
-        transform: translateX(100%);
-    }
-    .right-in-enter-active,
-    .right-in-leave-active,
-    .left-in-enter-active,
-    .left-in-leave-active {
-        transition: transform .5s;
-    }
-    .right-in-leave-to,
-    .left-in-enter-from {
-        transform: translateX(-100%);
-    }
     .btn {
         @apply py-4 font-roboto-condensed font-bold text-white bg-red rounded transition-colors duration-300 hover:bg-gray-700 uppercase;
-    }
-    .swiper-pagination-bullet {
-        @apply w-4 h-4 border-2 border-red mx-1 bg-transparent opacity-100 transition-colors;
-        &:hover,
-        &-active {
-            @apply bg-red;
-        }
     }
     header > div {
         max-width: theme('screens.xl');
@@ -259,6 +230,12 @@
     }
     .coaches {
         background-image: linear-gradient(theme('colors.gray.100') 60%, #fff 0, #fff);
+        > .container {
+            @screen 2xl {
+                padding: 0 100px;
+                max-width: 1400px;
+            }
+        }
         &__slide {
             @screen xl {
                 height: 448px;
@@ -292,18 +269,6 @@
                 }
             }
         }
-        .swiper-container {
-            overflow: visible;
-        }
-        .swiper-button-next,
-        .swiper-button-prev {
-            &::after {
-                @apply transform -rotate-45 text-black text-sm;
-            }
-            &:hover::after {
-                @apply text-red;
-            }
-        }
     }
     .counter {
         height: 152px;
@@ -312,10 +277,6 @@
         }
     }
     .review {
-        > .container,
-        .swiper-container {
-            height: 100%;
-        }
         &__decoration {
             top: 0;
             right: -105px;

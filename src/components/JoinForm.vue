@@ -12,9 +12,10 @@
         <div class="relative text-gray-600 mt-5">
             <input
                 type="text"
-                v-model="email"
                 class="appearance-none w-full h-12 border border-gray-300 rounded px-5 py-3 focus:outline-none"
-                :class="{ 'border-red': emailErr }">
+                :class="{ 'border-red': emailErr }"
+                :value="email"
+                @change="handleChange">
             <span v-show="!email" class="absolute left-5 top-3 pointer-events-none transition">E-mail</span>
             <span class="text-xs text-red absolute top-0 right-2">{{ emailErr }}</span>
         </div>
@@ -40,15 +41,27 @@ export default {
             }
             return true;
         };
+        const validateEmail = value => {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            const result = re.test(String(value).toLowerCase());
+            if (!value) {
+                return 'The text field is required.';
+            }
+            else if (!result) {
+                return 'The email is not a valid email.';
+            }
+            return true;
+        };
         const { value: name, errorMessage: nameErr } = useField('name', isRequired);
-        const { value: email, errorMessage: emailErr } = useField('email', isRequired); // TODO: email 格式驗證
+        const { value: email, errorMessage: emailErr, handleChange } = useField('email', validateEmail);
 
         return {
             submitHandler,
             name,
             nameErr,
             email,
-            emailErr
+            emailErr,
+            handleChange
         };
     }
 };

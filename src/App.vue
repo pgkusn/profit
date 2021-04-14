@@ -65,7 +65,7 @@
     </article>
 
     <article id="coaches" class="coaches py-12 md:pt-20 xl:pt-28 xl:pb-10">
-        <div class="container relative overflow-hidden xl:pb-8">
+        <div class="container relative">
             <h1 class="text-3xl xl:text-5xl font-bold mb-12 xl:mb-20 text-center uppercase">Our Coaches</h1>
             <CoachesSlider :data="coachesSliderData" data-aos="fade-up"></CoachesSlider>
         </div>
@@ -155,6 +155,11 @@
 <script>
 import { onBeforeUnmount, onMounted, reactive, ref } from 'vue';
 import { throttle } from 'lodash';
+
+import SwiperCore, { Controller, Navigation, Pagination } from 'swiper';
+SwiperCore.use([Controller, Navigation, Pagination]);
+import 'swiper/swiper-bundle.min.css';
+
 import HeaderBlock from '@/components/HeaderBlock.vue';
 import FeatureItem from '@/components/FeatureItem/FeatureItem.vue';
 import featureItemData from '@/components/FeatureItem/data.json';
@@ -233,3 +238,31 @@ export default {
     }
 };
 </script>
+
+<style lang="scss">
+@import '@/assets/sass/common';
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .2s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.swiper-pagination-bullet {
+    margin-right: .25rem;
+    margin-left: .25rem;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid $red;
+    background-color: transparent;
+    opacity: 1;
+    transition: background-color .3s;
+    &:hover,
+    &-active {
+        background-color: $red;
+    }
+}
+</style>

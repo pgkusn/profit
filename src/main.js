@@ -6,9 +6,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init({ once: true });
 
-import SwiperCore, { Controller, Navigation, Pagination, Scrollbar } from 'swiper';
-SwiperCore.use([Controller, Navigation, Pagination, Scrollbar]);
-
 import smoothscroll from 'smoothscroll-polyfill';
 smoothscroll.polyfill();
 

@@ -131,3 +131,20 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+.right-in-enter-from,
+.left-in-leave-to {
+    transform: translateX(100%);
+}
+.right-in-enter-active,
+.right-in-leave-active,
+.left-in-enter-active,
+.left-in-leave-active {
+    transition: transform .5s;
+}
+.right-in-leave-to,
+.left-in-enter-from {
+    transform: translateX(-100%);
+}
+</style>

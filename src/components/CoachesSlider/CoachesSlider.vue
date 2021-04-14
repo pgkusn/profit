@@ -6,6 +6,7 @@
         :space-between="30"
         :pagination="{ el: '.swiper-pagination', clickable: true }"
         :navigation="{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }"
+        class="xl:pb-8"
     >
         <swiper-slide
             v-for="item in $props.data"
@@ -35,20 +36,16 @@
         <div class="mx-auto mt-16 h-6 flex justify-center" v-show="slidesPerView < 3">
             <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-button-next w-12 h-12 bg-white rounded shadow transform rotate-45 right-0" v-show="slidesPerView === 3"></div>
-        <div class="swiper-button-prev w-12 h-12 bg-white rounded shadow transform rotate-45 left-0" v-show="slidesPerView === 3"></div>
     </swiper>
+
+    <div class="swiper-button-next w-12 h-12 bg-white rounded shadow transform rotate-45 2xl:right-0" v-show="slidesPerView === 3"></div>
+    <div class="swiper-button-prev w-12 h-12 bg-white rounded shadow transform rotate-45 2xl:left-0" v-show="slidesPerView === 3"></div>
 </template>
 
 <script>
 import { ref, watchEffect } from 'vue';
-import { screens } from '@/composition/mediaSensor';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
-import SwiperCore, { Controller, Pagination, Scrollbar } from 'swiper';
-SwiperCore.use([Controller, Pagination, Scrollbar]);
+import { screens } from '@/composition/mediaSensor';
 
 export default {
     name: 'CoachesSlider',
@@ -78,6 +75,21 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import '@/assets/sass/common';
 
+.swiper-button-next,
+.swiper-button-prev {
+    @media (min-width: #{$xl-screen}px) {
+        top: 60%;
+    }
+    &::after {
+        color: #000;
+        font-size: 14px;
+        transform: rotate(-45deg);
+    }
+    &:hover::after {
+        color: $red;
+    }
+}
 </style>
