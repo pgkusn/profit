@@ -49,7 +49,7 @@
                         @click="changeSlide(index)"
                     >
                         <div class="bg-white p-1.5 shadow-xl group">
-                            <div class="photo-slider__slide--img bg-cover transition duration-300 transform group-hover:scale-95" :style="{ 'background-image': `url(${item.img})` }" />
+                            <div class="photo-slider__slide__img bg-cover transition duration-300 transform group-hover:scale-95" :style="{ 'background-image': `url(${item.img})` }" />
                             <p class="text-lg text-center pt-4 pb-2 transition duration-300 transform group-hover:-translate-x-6">
                                 - {{ item.lbs }} lbs
                             </p>

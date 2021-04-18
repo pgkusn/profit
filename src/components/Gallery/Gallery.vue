@@ -1,5 +1,5 @@
 <template>
-    <div class="gallery-main relative mt-12 xl:mt-0 grid xl:gap-5">
+    <div class="gallery__main relative mt-12 xl:mt-0 grid xl:gap-5">
         <div
             v-for="(item, index) in $props.data"
             :key="item.id"
@@ -7,7 +7,7 @@
             class="group"
         >
             <div class="relative bg-white xl:group-hover:shadow-lg transition duration-300">
-                <a href class="gallery-main__item block h-0 relative xl:group-hover:scale-95 transform transition duration-300" @click.prevent="openModal(index)">
+                <a href class="gallery__main__item block h-0 relative xl:group-hover:scale-95 transform transition duration-300" @click.prevent="openModal(index)">
                     <img :src="item.img.preview" class="absolute inset-0 w-full h-full object-cover">
                 </a>
                 <!-- show when hover -->
@@ -44,7 +44,7 @@
 
                     <!-- thumbs -->
                     <div ref="thumbsWrapEl" class="absolute inset-x-0 bottom-0 overflow-x-auto py-2.5 bg-black">
-                        <div ref="thumbsEl" class="gallery-main__thumbs relative flex mx-auto">
+                        <div ref="thumbsEl" class="gallery__main__thumbs relative flex mx-auto">
                             <div
                                 v-for="(item, index) in $props.data"
                                 :key="item.id"

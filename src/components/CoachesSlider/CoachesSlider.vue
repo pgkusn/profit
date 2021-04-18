@@ -16,8 +16,8 @@
                 class="coaches__slide"
             >
                 <div class="bg-white shadow-xl">
-                    <div class="coaches__slide--img bg-cover" :style="{ 'background-image': `url(${item.img})` }" />
-                    <div class="coaches__slide--content flex flex-col items-center py-6 transition-all duration-300" :class="{ 'is-next': isNext }">
+                    <div class="coaches__slide__img bg-cover" :style="{ 'background-image': `url(${item.img})` }" />
+                    <div class="coaches__slide__content flex flex-col items-center py-6 transition-all duration-300" :class="{ 'is-next': isNext }">
                         <h2 class="uppercase text-xl font-bold leading-normal">
                             {{ item.name }}
                         </h2>
