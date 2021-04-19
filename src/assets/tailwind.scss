@@ -142,7 +142,8 @@
     }
     .apply {
         background-image: url('~@/assets/images/background-2.png');
-        [type=text]:focus + span {
+        [type=text]:focus + label,
+        [type=text]:not(:placeholder-shown) + label {
             opacity: 0;
         }
     }

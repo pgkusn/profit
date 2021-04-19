@@ -4,21 +4,23 @@
             <input
                 v-model="name"
                 type="text"
+                placeholder=" "
                 class="appearance-none w-full h-12 border border-gray-300 rounded px-5 py-3 focus:outline-none"
                 :class="{ 'border-red': nameErr }"
             >
-            <span v-show="!name" class="absolute left-5 top-3 pointer-events-none transition">Your Name</span>
+            <label class="absolute left-5 top-3 pointer-events-none transition">Your Name</label>
             <span class="text-xs text-red absolute top-0 right-2">{{ nameErr }}</span>
         </div>
         <div class="relative text-gray-600 mt-5">
             <input
                 type="text"
                 class="appearance-none w-full h-12 border border-gray-300 rounded px-5 py-3 focus:outline-none"
+                placeholder=" "
                 :class="{ 'border-red': emailErr }"
                 :value="email"
                 @change="handleChange"
             >
-            <span v-show="!email" class="absolute left-5 top-3 pointer-events-none transition">E-mail</span>
+            <label v-show="!email" class="absolute left-5 top-3 pointer-events-none transition">E-mail</label>
             <span class="text-xs text-red absolute top-0 right-2">{{ emailErr }}</span>
         </div>
         <button type="submit" class="btn px-12 mt-7">
