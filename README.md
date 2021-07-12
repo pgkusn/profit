@@ -1,24 +1,6 @@
-# profit
+# PROFIT
 
-## Project setup
-```
-npm install
-```
+使用 Vue 搭配 Tailwind CSS 製作的 RWD Landing Page
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Skill
+Vue3、Vue CLI、Tailwind CSS、GSAP、VeeValidate
